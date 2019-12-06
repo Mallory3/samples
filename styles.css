@@ -1,4 +1,5 @@
 /*Reset*/
+
 * {
   box-sizing: border-box;
 }
@@ -16,6 +17,9 @@ html, body {
 #image {
 width: 100%;
 }
+
+
+/*Hero*/
 
 #vid {
   width: 100%;
@@ -63,6 +67,8 @@ width: 100%;
   position: relative;
   bottom: .3em;
 }
+
+/*Image Content*/
 
 #titleDiv {
   width: 100%;
@@ -146,6 +152,8 @@ opacity: .7;
 cursor: pointer;
 }
 
+/*Testimonials*/
+
 #underImages {
   height: 50vh;
   width: 100%;
@@ -174,8 +182,9 @@ p {
   position: relative;
   top: 30%;
   margin-bottom: 2em;
- 
 }
+
+/*@media*/
 
 @media (max-width: 1600px) {
   section { 
@@ -202,7 +211,6 @@ p {
     grid-row-start: 4;
     grid-column: 1/-1;
   }
-
 }
 
 @media (max-width: 650px) {
@@ -232,7 +240,6 @@ p {
     position: absolute;
     bottom: 65%;
     z-index: 5;
-  
   }
 
   .samples {
@@ -252,7 +259,6 @@ p {
     position: relative;
     bottom: .3em;
   }
-
 }
 
 @media (max-width: 650px) {
@@ -312,5 +318,4 @@ p {
     margin: auto;
     font-family: 'Paytone One', sans-serif;
   }
-
 }
