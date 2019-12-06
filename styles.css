@@ -14,9 +14,7 @@ html, body {
 }
 
 #image {
-display: grid;
-height: 100%;
-margin: 3em;
+width: 100%;
 }
 
 #vid {
@@ -24,26 +22,27 @@ margin: 3em;
   height: 100vh;
 }
 
-#heroDiv {
+#herolayer {
   background-color: black;
-  opacity: 0.8;
-  height: 20vh;
+  opacity: 0.5;
+  height: 100vh;
   width: 100%;
   position: absolute;
-  bottom: 40%;
+  bottom: 0%;
   margin: 0;
 }
 
 #heroTitle {
   color: white;
-  font-size: 4ch;
+  font-size: 7ch;
   width: 95%;
   margin: .5em;
   display: block;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Paytone One', sans-serif;
   position: absolute;
-
+  bottom: 45%;
+  z-index: 5;
 }
 
 #hero {
@@ -56,61 +55,262 @@ margin: 3em;
   z-index: 0;
 }
 
-section {
+#underHero {
+  width: 100%;
+  height: 20vh;
+  background-image: linear-gradient(-45deg, #031022, #bdecda);
+  clip-path: polygon(50% 25%, 0 0, 100% 0);
+  position: relative;
+  bottom: .3em;
+}
+
+#titleDiv {
+  width: 100%;
+  height: 20vh;
+  grid-row-start: 1;
+}
+
+h3 {
+  font-size: 6ch;
+  text-align: center;
+  margin: auto;
+  font-family: 'Paytone One', sans-serif;
+}
+
+#imageSection {
+  margin-left: 3em;
+  margin-right: 3em;
+  margin-bottom: 8em;
+}
+
+#image {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  height: 100vmax; */
+  grid-template-rows: 1fr 1fr;
+  row-gap: 3em;
+  column-gap: 2em;
+}
+
+#bird {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  display: block;
+  margin: auto;
+}
+
+#zen {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: block;
+  margin: auto;
+}
+
+#saw {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  display: block;
+  margin: auto;
+}
+
+#bath {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  display: block;
+  margin: auto;
 }
 
 
 .samples {
   display: flex;
-  flex-grow: 1; /* pictures spaced evenly, take up any remaining space */
-  /* flex: auto; */
+  justify-content: center;
+  align-content: center;
+  flex-grow: 1; 
   flex-wrap: wrap;
-  flex-direction: row;
-  margin-bottom: 3em;
-  margin-left: 2em;
-  /* box-shadow: 5px 5px 0px rgb(0, 0, 0); */
-
-}
-
-#image .samples {
-  min-width: 40vmin;
-  max-width: 40vmax;
-  min-height: 30vmin;
-  max-height: 50vmax;
+  flex-direction: column;
+  min-width: 20vmin;
+  max-width: 55vmax;
+  min-height: 15vmin;
+  max-height: 60vmax;
   opacity: .95;
   flex: 1 1 20em;
   object-fit: cover;
 }
 
-
-#image .samples:hover {
+.samples:hover {
 transform: scale(1.1);
-transform: rotate(1); /* brings image forward, can rotate with -5deg */
-/* transition: all .25s ease-in-out; */
-/* background-color:black;
-z-index: 10; */
-/* opacity: 1; */
+transform: rotate(1); 
 transition: transform .5s;
-        /* background-color 1s, */
-        /* box-shadow 1s, */
-         /* changes speed it flips */
-/* box-shadow: 5px 5px 0px white; */
-/* border: 1px solid white; */
-opacity: 1;
+opacity: .7;
+cursor: pointer;
 }
 
-#testimonial {
+#underImages {
   height: 50vh;
   width: 100%;
-  background-image: linear-gradient(to top, #031022 0%, #eaeff3 100%);
+  background-image: linear-gradient(-45deg, #031022, #bdecda);
 }
 
-@media only screen and (max-width: 750px) {
-  section { grid-template-columns: 1fr; }
+h2 {
+  color: black;
+  font-size: 7ch;
+  width: 95%;
+  margin: 1em;
+  display: block;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  position: absolute;
+}
+
+p {
+  color: black;
+  font-size: 5ch;
+  width: 95%;
+  margin: .5em;
+  display: block;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+  top: 30%;
+  margin-bottom: 2em;
+ 
+}
+
+@media (max-width: 1600px) {
+  section { 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+
+  #bird {
+    grid-row-start: 1;
+    grid-column: 1/-1;
+  }
+
+  #zen {
+    grid-row-start: 2;
+    grid-column: 1/-1;
+  }
+
+  #saw {
+    grid-row-start: 3;
+    grid-column: 1/-1;
+  }
+
+  #bath {
+    grid-row-start: 4;
+    grid-column: 1/-1;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  #hero {
+    height: 46.5vh;
+  }
+
+  #heroDiv {
+    background-color: black;
+    opacity: 0.8;
+    height: 46.5vh;
+    width: 100vw;
+    position: absolute;
+    bottom: 53%;
+    margin: 0;
+  }
+
+  #heroTitle {
+    color: white;
+    font-size: 3.5ch;
+    width: 95%;
+    display: block;
+    text-align: center;
+    margin: auto;
+    font-family: 'Paytone One', sans-serif;
+    position: absolute;
+    bottom: 65%;
+    z-index: 5;
+  
+  }
+
+  .samples {
+    width: 50%;
+  }
+
+  #image {
+    row-gap: 1em;
+    column-gap: 0;
+  }
+
+  #underHero {
+    width: 100%;
+    height: 15vh;
+    background-image: linear-gradient(-45deg, #031022, #bdecda);
+    clip-path: polygon(50% 25%, 0 0, 100% 0);
+    position: relative;
+    bottom: .3em;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  #hero {
+    height: 60vh;
+  }
+
+  #herolayer {
+    background-color: black;
+    opacity: 0.5;
+    height: 60vh;
+    width: 100%;
+    position: absolute;
+    bottom: 40.08%;
+    margin: 0;
+  }
+
+  #underHero {
+    position: relative;
+    bottom: .27em;
+  }
+
+  .samples {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 3.5ch;
+    width: 100%;
+    margin: 0;
+    margin-top: 1em;
+  }
+  
+  p {
+    color: black;
+    font-size: 2.5ch;
+    width: 95%;
+    margin: .5em;
+    display: block;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
+    top: 30%;
+    margin-bottom: 2em;
+  }
+
+  #titleDiv {
+    width: 100%;
+    height: 20vh;
+    grid-row-start: 1;
+  }
+  
+  h3 {
+    font-size: 3ch;
+    text-align: center;
+    margin: auto;
+    font-family: 'Paytone One', sans-serif;
+  }
+
 }
